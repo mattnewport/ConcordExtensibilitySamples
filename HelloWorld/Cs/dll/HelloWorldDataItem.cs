@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+using System.Collections.Generic;
 using Microsoft.VisualStudio.Debugger;
 using Microsoft.VisualStudio.Debugger.CallStack;
 
@@ -31,7 +32,7 @@ namespace HelloWorld
     internal class HelloWordDataItem : DkmDataItem
     {
         // Object is created from GetInstance
-        private HelloWordDataItem()
+        public HelloWordDataItem()
         {
         }
 
@@ -40,6 +41,8 @@ namespace HelloWorld
             get;
             set;
         }
+
+        public Dictionary<string, List<string>> VmCallStacks { get; } = new Dictionary<string, List<string>>();
 
         /// <summary>
         /// Returns the instance of HelloWorldDataItem associated with the input DkmStackContext

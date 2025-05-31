@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (c) Microsoft. All rights reserved.
+Licensed under the MIT license. See LICENSE file in the project root for full license information.
+-->
+
+<!--
+This file is used to describe the HelloWorld component. This file is run through 
+vsdconfigtool.exe as part of the build, which generates HelloWorld.vsdconfig. HelloWorld.vsdconfig 
+is a binary version of this file which is deployed along with HelloWorld.dll. HelloWorld.vsdconfig 
+is then read by he component loading system at runtime.
+
+For more information about this file, see https://github.com/Microsoft/ConcordExtensibilitySamples/wiki/Component-discovery-and-configuration
+-->
+
+<Configuration xmlns="http://schemas.microsoft.com/vstudio/vsdconfig/2008">
+    <ManagedComponent
+      ComponentId="88afc38a-a3d5-43a5-a66d-13203682abea"
+      ComponentLevel="40500"
+      AssemblyName="HelloWorld">
+        <!--NOTE: For more information on ComponentLevel, see https://github.com/Microsoft/ConcordExtensibilitySamples/wiki/Component-Levels-->
+
+        <Class Name="HelloWorld.ScriptModuleRegistrar">
+
+            <Implements>
+                <InterfaceGroup>
+                    <NoFilter/>
+                    <Interface Name="IDkmCustomMessageForwardReceiver"/>
+                </InterfaceGroup>
+            </Implements>
+        </Class>
+
+    </ManagedComponent>
+</Configuration>

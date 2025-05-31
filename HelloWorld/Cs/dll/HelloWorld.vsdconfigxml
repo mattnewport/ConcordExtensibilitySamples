@@ -14,13 +14,10 @@ For more information about this file, see https://github.com/Microsoft/ConcordEx
 -->
 
 <Configuration xmlns="http://schemas.microsoft.com/vstudio/vsdconfig/2008">
+    <DefineGuid Name="guidSquirrelSymbolProvider" Value="add54240-e4f4-4b64-8744-10df664c2678"/>
 
-  <!--TODO: If you copy the sample, ensure to regenerate the GUID in this file. This
-  can be done with the 'Create GUID' tool ('Tools->Create GUID' in Visual Sudio or 
-  guidgen.exe from the command line).-->
-
-  <ManagedComponent
-    ComponentId="51736b14-9fb4-4b6d-8aca-a10a2b7ae768"
+    <ManagedComponent
+    ComponentId="8e306e04-3144-4abd-b7d9-edc6731a3032"
     ComponentLevel="9995000"
     AssemblyName="HelloWorld">
     <!--NOTE: For more information on ComponentLevel, see https://github.com/Microsoft/ConcordExtensibilitySamples/wiki/Component-Levels-->
@@ -31,6 +28,14 @@ For more information about this file, see https://github.com/Microsoft/ConcordEx
         <InterfaceGroup>
           <NoFilter/>
           <Interface Name="IDkmCallStackFilter"/>
+          <Interface Name="IDkmModuleInstanceLoadNotification"/>
+        </InterfaceGroup>
+        <InterfaceGroup>
+            <Filter>
+                <SymbolProviderId RequiredValue="guidSquirrelSymbolProvider"/>
+            </Filter>
+            <Interface Name="IDkmSymbolQuery"/>
+            <Interface Name="IDkmSymbolDocumentCollectionQuery"/>
         </InterfaceGroup>
       </Implements>
     </Class>

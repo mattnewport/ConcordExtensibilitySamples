@@ -50,14 +50,17 @@
     <VsdConfigXmlFiles Include="HelloWorld.vsdconfigxml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Debugger.Engine" Version="$(ConcordPackageVersion)">
+    <PackageReference Include="Microsoft.VisualStudio.Debugger.Engine" Version="17.14.1051801">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <!--Reference the VSDConfigTool package. This brings build tools used to compile the .vsdconfigxml
     file into a .vsdconfig file.-->
-    <PackageReference Include="Microsoft.VSSDK.Debugger.VSDConfigTool" Version="$(ConcordPackageVersion)">
+    <PackageReference Include="Microsoft.VSSDK.Debugger.VSDConfigTool" Version="17.14.1051801">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <VsdConfigXmlFiles Include="ScriptModuleRegistrar.vsdconfigxml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
